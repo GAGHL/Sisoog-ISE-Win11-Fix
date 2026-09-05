@@ -50,13 +50,6 @@ The script automatically walks up one folder from its own location and searches 
 4. Press any key at the start screen.
 5. Wait for the **SUCCESS** (green) or **FAILED** (red) result screen.
 
-If the ISE installer itself hangs at 91% ("Enabling WebTalk") during installation, end the `xwebtalk.exe` process in Task Manager to let it finish. After installing, enable WebTalk manually from an administrator command prompt:
-
-```cmd
-cd /d C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64
-xwebtalk -install on
-```
-
 ## Restoring the original files
 
 Each patched folder keeps a `libPortability.dll.bak` copy of the original file it replaced. To undo the patch, rename `libPortability.dll.bak` back to `libPortability.dll` in each of the folders listed above.
