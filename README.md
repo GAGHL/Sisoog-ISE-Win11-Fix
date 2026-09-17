@@ -1,12 +1,22 @@
-# Sisoog — Xilinx ISE 14.7 Windows 11 Compatibility Patch
+<div dir="rtl" align="right">
 
-A small batch script that automatically applies the `libPortability.dll` compatibility fix required to run **Xilinx ISE Design Suite 14.7** on **Windows 11**, without doing the file copying by hand.
+# پچ سازگاری Xilinx ISE با Windows 11 - سیسوگ
 
-## What it does
+این یک اسکریپت Batch کوچک است که فایل‌های `libPortability.dll` لازم برای اجرای **Xilinx ISE Design Suite 14.7** روی **ویندوز ۱۱** را به‌صورت خودکار اعمال می‌کند، بدون این‌که نیاز باشد فایل‌ها را دستی کپی کنید.
 
-Xilinx ISE 14.7 predates Windows 11 and crashes/hangs unless a patched `libPortability.dll` (32-bit and 64-bit versions) is copied into several folders inside the ISE installation. This script automates that copy step and takes a backup of every file it overwrites.
+## آموزش فارسی
 
-**64-bit (`nt64`) file is copied to:**
+آموزش نصب و استفاده از این روش به زبان فارسی در سایت سیسوگ موجود است:</br>
+[نصب Xilinx ISE روی ویندوز ۱۱ به روش سیسوگ](https://sisoog.com/xilinx-ise-installation-on-windows-11-using-sisoog-method/)
+
+## این اسکریپت چه کاری انجام می‌دهد
+
+نرم‌افزار Xilinx ISE 14.7 قبل از عرضه‌ی ویندوز ۱۱ ساخته شده است و نصب کردن آن روی این نسخه از ویندوز مشکلاتی به همراه دارد. برای نصب آن روی ویندوز ۱۱ باید ابتدا طبق آموزش زیر نرم‌افزار نصب کرده و سپس DLL های لازم در چند پوشه‌ی مختلف داخل مسیر نصب ISE کپی شود. این اسکریپت این مرحله‌ی کپی را خودکار می‌کند و از هر فایلی که رونویسی می‌کند، یک نسخه‌ی پشتیبان می‌گیرد.
+
+**فایل ۶۴ بیتی (`nt64`) در مسیرهای زیر کپی می‌شود:**
+
+<div dir="ltr" align="left">
+
 ```
 ISE_DS\ISE\sysgen\bin\nt64
 ISE_DS\ISE\bin\nt64
@@ -17,18 +27,27 @@ ISE_DS\common\lib\nt64
 ISE_DS\xinstall\bin\nt64
 ```
 
-**32-bit (`nt`) file is copied to:**
+</div>
+
+**فایل ۳۲ بیتی (`nt`) در مسیرهای زیر کپی می‌شود:**
+
+<div dir="ltr" align="left">
+
 ```
 ISE_DS\EDK\lib\nt
 ISE_DS\ISE\lib\nt
 ISE_DS\common\lib\nt
 ```
 
-Before overwriting any file, the script backs up the original as `libPortability.dll.bak` in the same folder (only on the first run, so re-running the script never overwrites a good backup).
+</div>
 
-## Folder structure
+پیش از رونویسی هر فایل، اسکریپت یک نسخه‌ی پشتیبان از فایل اصلی با نام `libPortability.dll.bak` در همان پوشه ذخیره می‌کند (فقط در اولین اجرا، تا با اجرای دوباره‌ی اسکریپت، پشتیبان سالم قبلی از بین نرود).
 
-Place the script in any folder under `C:\Xilinx`, alongside the patched DLLs:
+## ساختار پوشه‌ها
+
+اسکریپت را در هر پوشه‌ای زیر مسیر `C:\Xilinx` قرار دهید، کنار فایل‌های DLL پچ‌شده:
+
+<div dir="ltr" align="left">
 
 ```
 C:\Xilinx\
@@ -40,28 +59,32 @@ C:\Xilinx\
         └── libPortability.dll
 ```
 
-The script automatically walks up one folder from its own location and searches for the `ISE_DS` installation folder underneath it.
+</div>
 
-## Usage
+اسکریپت به‌صورت خودکار یک پوشه از مسیر خودش بالا می‌رود و پوشه‌ی نصب `ISE_DS` را زیر آن جست‌وجو می‌کند.
 
-1. Download this repository.
-2. Copy the folder to `C:\Xilinx\` (or any subfolder of it).
-3. Right-click `Sisoog ISE Win11 Fix.bat` → **Run as administrator**.
-4. Press any key at the start screen.
-5. Wait for the **SUCCESS** (green) or **FAILED** (red) result screen.
+## نحوه‌ی استفاده
 
-## Restoring the original files
+۱. این ریپازیتوری را دانلود کنید.</br>
+۲. پوشه را در مسیر `C:\Xilinx\` (یا هر زیرپوشه‌ای از آن) کپی کنید.</br>
+۳. روی `Sisoog ISE Win11 Fix.bat` راست‌کلیک کرده و گزینه‌ی **Run as administrator** را انتخاب کنید.</br>
+۴. در صفحه‌ی شروع، یک کلید را فشار دهید.</br>
+۵. منتظر بمانید تا پیام **SUCCESS** (سبز) یا **FAILED** (قرمز) نمایش داده شود.</br>
 
-Each patched folder keeps a `libPortability.dll.bak` copy of the original file it replaced. To undo the patch, rename `libPortability.dll.bak` back to `libPortability.dll` in each of the folders listed above.
+## بازگرداندن فایل‌های اصلی
 
-## Disclaimer
+در هر پوشه‌ی پچ‌شده، یک نسخه‌ی `libPortability.dll.bak` از فایل اصلی نگه‌داری می‌شود. برای لغو پچ، در هرکدام از پوشه‌های ذکرشده، فایل `libPortability.dll.bak` را به `libPortability.dll` تغییر نام دهید.
 
-This is an unofficial community workaround, not provided or endorsed by AMD/Xilinx. Use at your own risk.
+## سلب مسئولیت
 
-## Author
+این یک راه‌حل غیررسمی و مبتنی بر تلاش جامعه‌ی کاربران است و توسط AMD/Xilinx ارائه یا تأیید نشده است. استفاده از آن بر عهده‌ی خودتان است.
 
-**Abbas Ghalavandi**
+## توسعه‌دهنده
 
-## License
+**عباس قلاوندی**
+
+## مجوز
 
 MIT
+
+</div>
