@@ -54,12 +54,13 @@ Place the script in any folder under `C:\Xilinx`, alongside the patched DLLs:
 
 ```
 C:\Xilinx\
-└── Sisoog ISE Win11 Fix\
-    ├── Sisoog ISE Win11 Fix.bat
-    ├── nt\
-    │   └── libPortability.dll
-    └── nt64\
-        └── libPortability.dll
+    ├── 14.7
+    └── Sisoog ISE Win11 Fix\
+        ├── Sisoog ISE Win11 Fix.bat
+        ├── nt\
+        │   └── libPortability.dll
+        └── nt64\
+            └── libPortability.dll
 ```
 
 The script automatically walks up one folder from its own location and searches for the `ISE_DS` installation folder underneath it.

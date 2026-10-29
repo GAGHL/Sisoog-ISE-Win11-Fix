@@ -70,12 +70,13 @@ ISE_DS\ISE\lib\nt\libPortabilityNOSH.dll
 
 ```
 C:\Xilinx\
-└── Sisoog ISE Win11 Fix\
-    ├── Sisoog ISE Win11 Fix.bat
-    ├── nt\
-    │   └── libPortability.dll
-    └── nt64\
-        └── libPortability.dll
+    ├── 14.7
+    └── Sisoog ISE Win11 Fix\
+        ├── Sisoog ISE Win11 Fix.bat
+        ├── nt\
+        │   └── libPortability.dll
+        └── nt64\
+            └── libPortability.dll
 ```
 
 </div>
