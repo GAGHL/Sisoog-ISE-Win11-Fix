@@ -2,7 +2,7 @@
 
 # پچ سازگاری Xilinx ISE با Windows 11 - سیسوگ
 
-[English](README.md) | **فارسی**
+[English](README_EN.md) | **فارسی**
 
 این یک اسکریپت Batch کوچک است که فایل‌های `libPortability.dll` لازم برای اجرای **Xilinx ISE Design Suite 14.7** روی **ویندوز ۱۱** را به‌صورت خودکار اعمال می‌کند، بدون این‌که نیاز باشد فایل‌ها را دستی کپی کنید. همچنین مشکل **گیر کردن ISim روی Elaborating** را حل می‌کند.
 

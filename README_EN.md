@@ -1,6 +1,6 @@
 # Sisoog — Xilinx ISE Windows 11 Compatibility Patch
 
-**English** | [فارسی](README.fa.md)
+**English** | [فارسی](README.md)
 
 A small batch script that automatically applies the `libPortability.dll` files required to run **Xilinx ISE Design Suite 14.7** on **Windows 11**, without doing the file copying by hand. It also fixes **ISim getting stuck on "Elaborating"**.
 
